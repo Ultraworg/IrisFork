@@ -1,0 +1,64 @@
+{
+    "tagstore": [
+        {
+          "name": "04 9D 5D 61 19 61 80",
+          "type": "playback",
+          "cmd": "pause",         
+          "tlid": "1",
+          "link": "/rfid/tags/default"
+        },
+       {
+          "name":"045C605E196181",
+          "type": "playback",
+          "cmd": "next",
+          "tlid": "2",
+          "link": "/rfid/tags/045C605E196181"
+        },
+       {
+          "name":"04 C4 03 48 39 61 80",
+          "type": "music",
+          "cmd": "soundcloud:song/La Belle Mixtape Summer Memories Henri Pfr.127584271"
+        },
+       {
+          "name":"04 E7 A0 48 39 61 80",
+          "type": "music",
+          "cmd": "spotify:track:6Xe9wT5xeZETPwtaP2ynUz"
+        },
+       {
+          "name":"04 EE D2 61 19 61 81",
+          "type": "system",
+          "cmd": "bluetooth"
+        },
+       {
+          "name":"04 C1 F7 5E 19 61 81",
+          "type": "playback",
+          "cmd": "pause",
+          "tlid": "99"
+        },
+        {
+          "name":"04 C1 F7 5E 19 61 81",
+          "type": "playback",
+          "cmd": "pause",
+          "tlid": "99"
+        },
+        {
+          "name":"04 C1 F7 5E 19 61 81",
+          "type": "playback",
+          "cmd": "pause",
+          "tlid": "99"
+        },
+        {
+          "name":"04 C1 F7 5E 19 61 81",
+          "type": "playback",
+          "cmd": "pause",
+          "tlid": "99"
+        },
+        {
+          "name":"04 C1 F7 5E 19 61 81",
+          "type": "playback",
+          "cmd": "pause",
+          "tlid": "99"
+        }
+      
+      ]
+  }

@@ -156,6 +156,10 @@ const Sidebar = () => {
               <I18n path="sidebar.settings" />
               <StatusIcon />
             </Link>
+            <Link to="/rfid" className="sidebar__menu__item" activeClassName="sidebar__menu__item--active">
+              <Icon name="nfc" type="material" />
+              <I18n path="sidebar.rfid" />
+            </Link>
           </section>
 
         </nav>

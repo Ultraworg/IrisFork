@@ -179,6 +179,7 @@ sidebar:
   tracks: Tracks
   browse: Browse
   settings: Settings
+  rfid: RFID Tags
   servers: Servers
   not_connected: '%{name} not connected'
   browser_offline: Browser offline
@@ -362,6 +363,16 @@ track:
   unknown_album: Unknown album
   want_lyrics: 'Want track lyrics? Authorize Genius under '
   lyrics: Lyrics
+rfid:
+  title: Tag control
+  help: Help
+  tag:
+    id: Tag ID
+    cmd: Command
+    type: Type
+    update: Update
+  getLatestScan: Get last scanned tag
+  addTag: Add new Tag
 settings:
   title: Settings
   help: Help

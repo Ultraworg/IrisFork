@@ -28,6 +28,7 @@ import QueueHistory from './views/QueueHistory';
 import Debug from './views/Debug';
 import Search from './views/Search';
 import Settings from './views/Settings';
+import RFID from './views/RFID';
 import Discover from './views/Discover/Discover';
 import Library from './views/Library/Library';
 import ModalStateListener from './components/ModalStateListener';
@@ -39,6 +40,7 @@ import * as pusherActions from './services/pusher/actions';
 import * as mopidyActions from './services/mopidy/actions';
 import * as spotifyActions from './services/spotify/actions';
 import * as snapcastActions from './services/snapcast/actions';
+import * as tagActions from './services/tags/actions';
 import MediaSession from './components/MediaSession';
 import ErrorBoundary from './components/ErrorBoundary';
 
@@ -68,6 +70,7 @@ const Content = () => (
         <Route path="uri/:uri/:name" element={<UriRedirect />} />
         <Route path="discover/*" element={<Discover />} />
         <Route path="library/*" element={<Library />} />
+        <Route path="rfid/*" element={<RFID />} />
         <Route element={
           <ErrorMessage type="not-found" title="Not found">
             <p>Oops, that link could not be found</p>

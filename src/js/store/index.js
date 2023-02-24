@@ -12,6 +12,7 @@ import lastfm from '../services/lastfm/reducer';
 import spotify from '../services/spotify/reducer';
 import snapcast from '../services/snapcast/reducer';
 import genius from '../services/genius/reducer';
+import rfidtags from '../services/tags/reducer';
 
 import migration from './migration';
 
@@ -113,6 +114,11 @@ let initialState = {
     server: null,
     commands: {},
   },
+  rfidtags: {
+    tagsData: [],
+    isLoading: false,
+    isError: false,
+  },
 };
 
 // Run any migrations
@@ -148,6 +154,12 @@ const lastfmPersistConfig = {
 
 const snapcastPersistConfig = {
   key: 'snapcast',
+  storage: localForage,
+  debug: window.test_mode,
+};
+
+const rfidtagsPersistConfig = {
+  key: 'rfidtags',
   storage: localForage,
   debug: window.test_mode,
 };
@@ -213,6 +225,7 @@ const appReducer = combineReducers({
   genius: persistReducer(geniusPersistConfig, genius),
   lastfm: persistReducer(lastfmPersistConfig, lastfm),
   snapcast: persistReducer(snapcastPersistConfig, snapcast),
+  rfidtags: persistReducer(rfidtagsPersistConfig, rfidtags),
 });
 const rootReducer = (state, action) => {
   let nextState = state;
