@@ -200,6 +200,7 @@ const App = () => {
       dispatch(mopidyActions.connect());
       dispatch(pusherActions.connect());
       dispatch(uiActions.getBroadcasts());
+      dispatch(tagActions.loadTags());
       if (snapcast_enabled) {
         dispatch(snapcastActions.connect());
       }

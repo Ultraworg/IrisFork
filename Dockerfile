@@ -1,6 +1,5 @@
 # --- Build Node ---
 FROM rust:slim-bullseye AS Builder
-LABEL org.opencontainers.image.authors="https://github.com/seppi91"
 ARG TARGETPLATFORM
 ARG TARGETARCH
 ARG TARGETVARIANT
@@ -115,9 +114,9 @@ RUN python3 -m pip install --upgrade pip
 # This allows a binding at "/iris" to map to your local folder for development, rather than
 # installing using pip.
 # Note: ADD helps prevent RUN caching issues. When HEAD changes in repo, our cache will be invalidated!
-ADD https://api.github.com/repos/jaedb/Iris/git/refs/heads/master version.json
-ENV IRIS_VERSION=develop
-RUN git clone --depth 1 --single-branch -b ${IRIS_VERSION} https://github.com/jaedb/Iris.git /iris \
+#ADD https://api.github.com/repos/jaedb/Iris/git/refs/heads/master version.json
+ENV IRIS_VERSION=master
+RUN git clone --depth 1 --single-branch -b ${IRIS_VERSION} https://github.com/Ultraworg/IrisFork.git /iris \
  && cd /iris \
  && npm install \
  && npm run prod \
@@ -138,6 +137,14 @@ RUN git clone --depth 1 -b gstspotifysrc-hack https://github.com/kingosticks/mop
  && python3 setup.py install \
  && cd .. \
  && rm -rf mopidy-spotify
+
+# Install mopidy-radionet (PR API-Fixed)
+# (https://github.com/plintx/mopidy-radionet/pull/18)
+RUN git clone --depth 1 -b master https://github.com/Emrvb/mopidy-radionet.git mopidy-radionet \
+ && cd mopidy-radionet \
+ && python3 setup.py install \
+ && cd .. \
+ && rm -rf mopidy-radionet
 
 # Install additional mopidy extensions and Python dependencies via pip
 COPY docker/requirements.txt .
