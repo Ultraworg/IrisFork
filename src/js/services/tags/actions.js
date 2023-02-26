@@ -26,7 +26,7 @@ export function removeTag(id) {
 
 export function loadTags() {
   return (dispatch, getState) => {
-    fetch('http://192.168.1.201:1880/tags')
+    fetch('https://node.purv.de/tags')
         .then((res) => {return res.json()})
         .then((data) => {        
            var tagArray = data.tagsData;

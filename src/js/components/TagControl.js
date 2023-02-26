@@ -27,7 +27,7 @@ const TagControl = (it) => {
     dispatch(tagActions.updateTag(id, newID, cmd, newCmd, fnc, newFnc));
     navigate(`/rfid/tags/${newID}`);
   };
-  const saveTags = () => {fetch('http://192.168.1.201:1880/updateTags', {
+  const saveTags = () => {fetch('https://node.purv.de/updateTags', {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
@@ -42,7 +42,7 @@ const TagControl = (it) => {
   };
 
   const getLatestTag = () => { 
-    fetch('http://192.168.1.201:1880/tagid')
+    fetch('https://node.purv.de/tagid')
       .then((res) => {return res.text()})
       .then((data) => {
          console.log(data);
@@ -61,7 +61,6 @@ const TagControl = (it) => {
   var cmd = null;
   var fnc = null; 
   current_tagstore.map((data, key) => {
-   // console.log(data);
     if(data.name === id){
       isCurrent = true;
       cmd = data.cmd;
@@ -149,8 +148,7 @@ const Menu = () => {
               {tag.cmd}
             </span>
           );         
-          return (
-            
+          return (            
               <Link
                 className="grid__item"
                 activeClassName="grid-item--active"

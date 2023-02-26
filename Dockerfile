@@ -114,7 +114,7 @@ RUN python3 -m pip install --upgrade pip
 # This allows a binding at "/iris" to map to your local folder for development, rather than
 # installing using pip.
 # Note: ADD helps prevent RUN caching issues. When HEAD changes in repo, our cache will be invalidated!
-#ADD https://api.github.com/repos/jaedb/Iris/git/refs/heads/master version.json
+ADD https://api.github.com/repos/Ultraworg/IrisFork/git/refs/heads/master version.json
 ENV IRIS_VERSION=master
 RUN git clone --depth 1 --single-branch -b ${IRIS_VERSION} https://github.com/Ultraworg/IrisFork.git /iris \
  && cd /iris \
